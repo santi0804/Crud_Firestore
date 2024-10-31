@@ -1,30 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    tools:context=".MainActivity">
+
 
     <EditText
-        android:id="@+id/etName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Name"
-        android:padding="16dp"/>
+        android:id="@+id/et_cedula"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="Cedula"
+        app:layout_constraintTop_toBottomOf="@+id/et_cedula"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9"
+        android:layout_marginBottom="8dp"/>
 
     <EditText
-        android:id="@+id/etAge"
-        android:layout_width="match_parent"
+        android:id="@+id/et_nombre"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="Nombre"
+        app:layout_constraintTop_toBottomOf="@+id/et_cedula"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="Email"
+        app:layout_constraintTop_toBottomOf="@+id/et_cedula"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/et_telefono"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="Telefono"
+        app:layout_constraintTop_toBottomOf="@+id/et_cedula"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/et_edad"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="Edad"
+        app:layout_constraintTop_toBottomOf="@+id/et_cedula"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/et_direccion"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="Dirección"
+        app:layout_constraintTop_toBottomOf="@+id/et_cedula"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9"
+        android:layout_marginBottom="8dp"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayaoutButtons"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Enter Age"
-        android:inputType="number"
-        android:padding="16dp"/>
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/et_direccion"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
 
 
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Save to Firestore" />
+        <Button
+            android:id="@+id/btn_add_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="agregarUsuario"
+            android:text="Agregar"/>
 
-</LinearLayout>
+
+        <Button
+            android:id="@+id/btn_read_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="agregarUsuario"
+            android:text="Leer"/>
+
+
+        <Button
+            android:id="@+id/btn_update_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="agregarUsuario"
+            android:text="Actualizar"/>
+
+
+        <Button
+            android:id="@+id/btn_delete_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="agregarUsuario"
+            android:text="Eliminar"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayaoutButtons"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
